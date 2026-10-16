@@ -1,0 +1,12 @@
+bin/
+obj/
+appsettings.Development.json
+node_modules/
+dist/
+.vs/
+.idea/
+*.user
+*.suo
+TestResults/
+*.log
+.DS_Store

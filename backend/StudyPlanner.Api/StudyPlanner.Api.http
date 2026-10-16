@@ -1,0 +1,21 @@
+@host = http://localhost:5080
+
+GET {{host}}/api/health
+
+###
+
+GET {{host}}/api/tasks
+
+###
+
+POST {{host}}/api/tasks
+Content-Type: application/json
+
+{
+  "title": "Повторить бинарный поиск",
+  "description": "Сложность и граница массива",
+  "subject": "Алгоритмы",
+  "priority": "medium",
+  "status": "todo",
+  "dueDate": "2026-10-20"
+}

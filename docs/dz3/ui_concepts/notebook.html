@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <title>Концепция «Тетрадь»</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background:
+        radial-gradient(circle at 8% 0%, rgba(216, 90, 42, 0.14), transparent 28%),
+        #efe7da;
+      color: #1e2430;
+      font-family: "Segoe UI", sans-serif;
+    }
+    .wrap { max-width: 1080px; margin: 0 auto; padding: 36px 28px 48px; }
+    .kicker { letter-spacing: 0.22em; text-transform: uppercase; color: #1f6a5b; font-size: 12px; font-weight: 700; }
+    h1 { font-family: Georgia, serif; font-size: 64px; margin: 6px 0; font-weight: 650; }
+    .lead { color: #5e675f; max-width: 420px; }
+    .layout { display: grid; grid-template-columns: 240px 1fr; gap: 22px; margin-top: 28px; }
+    aside, .card, .stat { background: #fffaf3; border: 1px solid #e3d8c6; border-radius: 22px; }
+    aside { padding: 16px; height: fit-content; }
+    .new {
+      width: 100%; border: 0; background: #d85a2a; color: white; border-radius: 999px;
+      padding: 12px; font-weight: 700; margin-bottom: 16px;
+    }
+    .label { font-weight: 700; font-size: 14px; margin: 12px 0 8px; }
+    .chip { display: inline-block; margin: 0 6px 6px 0; padding: 6px 10px; border-radius: 999px; background: #fff; border: 1px solid #e3d8c6; font-size: 13px; }
+    .chip.on { background: #1e2430; color: white; border-color: #1e2430; }
+    .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+    .stat { padding: 12px 14px; }
+    .stat b { display: block; font-family: Georgia, serif; font-size: 32px; margin-top: 4px; }
+    .search { margin: 12px 0; background: #fffaf3; border: 1px solid #e3d8c6; border-radius: 16px; padding: 12px 14px; color: #5e675f; }
+    .card { padding: 14px 16px; margin-top: 10px; }
+    .bar { border-left: 4px solid #d85a2a; padding-left: 14px; }
+    .bar.mid { border-color: #8d6420; }
+    .bar.low { border-color: #1f6a5b; }
+    .meta { color: #5e675f; font-size: 12px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; }
+    .late { background: rgba(157, 44, 44, 0.1); color: #9d2c2c; border-radius: 999px; padding: 2px 8px; margin-left: 6px; text-transform: none; letter-spacing: 0; }
+    h3 { margin: 4px 0; font-size: 18px; }
+    .muted { color: #5e675f; font-size: 14px; }
+    .row { display: flex; gap: 8px; margin-top: 12px; align-items: center; }
+    .pill { border-radius: 999px; padding: 6px 10px; font-size: 13px; font-weight: 700; }
+    .go { background: #1f6a5b; color: white; }
+    .ghost { border: 1px solid #e3d8c6; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="kicker">концепция 1 · тетрадь</div>
+    <h1>Планёр</h1>
+    <p class="lead">Бумажный список: один столбец карточек, срок читается как строка в конспекте.</p>
+    <div class="layout">
+      <aside>
+        <button class="new">Новая задача</button>
+        <div class="label">Статус</div>
+        <span class="chip on">Все</span><span class="chip">К выполнению</span><span class="chip">В работе</span>
+        <div class="label">Приоритет</div>
+        <span class="chip on">Все</span><span class="chip">Высокий</span><span class="chip">Средний</span>
+      </aside>
+      <section>
+        <div class="stats">
+          <div class="stat">Всего<b>6</b></div>
+          <div class="stat">В работе<b style="color:#1f6a5b">2</b></div>
+          <div class="stat">Ожидают<b style="color:#8d6420">3</b></div>
+          <div class="stat">Просрочено<b style="color:#9d2c2c">1</b></div>
+        </div>
+        <div class="search">Поиск по названию, предмету или описанию</div>
+        <article class="card"><div class="bar">
+          <div class="meta">Машинное обучение · высокий <span class="late">Просрочено</span></div>
+          <h3>Сдать отчёт по сравнению AI-инструментов</h3>
+          <p class="muted">Срок: 14 октября · вчера</p>
+          <div class="row"><span class="pill ghost">В работе</span><span class="pill go">Готово</span><span class="pill ghost">Изменить</span></div>
+        </div></article>
+        <article class="card"><div class="bar mid">
+          <div class="meta">Базы данных · средний</div>
+          <h3>Лабораторная: запросы SELECT</h3>
+          <p class="muted">Срок: 18 октября · через 3 дн.</p>
+          <div class="row"><span class="pill ghost">К выполнению</span><span class="pill go">В работу</span><span class="pill ghost">Изменить</span></div>
+        </div></article>
+        <article class="card"><div class="bar low">
+          <div class="meta">Веб-разработка · низкий</div>
+          <h3>Макет списка задач</h3>
+          <p class="muted">Срок: 13 октября · готово</p>
+          <div class="row"><span class="pill ghost">Готово</span><span class="pill go">Вернуть</span></div>
+        </div></article>
+      </section>
+    </div>
+  </div>
+</body>
+</html>

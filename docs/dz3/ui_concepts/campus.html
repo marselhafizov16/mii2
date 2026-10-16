@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <title>Концепция «Кампус»</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: #ff5a36;
+      color: #24140f;
+      font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+    }
+    .wrap { padding: 28px; }
+    header { display: flex; justify-content: space-between; align-items: end; color: white; }
+    h1 { margin: 0; font-size: 54px; letter-spacing: -1px; }
+    .sub { opacity: 0.85; }
+    .board { margin-top: 22px; display: grid; grid-template-columns: 1.2fr 1fr 1fr; gap: 14px; }
+    .tile {
+      background: #fff4cc;
+      border-radius: 28px;
+      padding: 18px;
+      min-height: 180px;
+      box-shadow: 6px 8px 0 #24140f;
+    }
+    .tile.white { background: white; }
+    .tile.mint { background: #d7ff6a; }
+    .tag { display: inline-block; background: #24140f; color: white; border-radius: 999px; padding: 4px 10px; font-size: 12px; font-weight: 700; }
+    h2 { font-size: 28px; margin: 12px 0 8px; line-height: 1.15; }
+    .big { font-size: 64px; margin: 0; line-height: 0.9; }
+    .filters { display: flex; gap: 8px; margin-top: 16px; }
+    .filters span { background: white; border-radius: 999px; padding: 8px 12px; font-weight: 700; }
+    .fab {
+      position: fixed; right: 28px; bottom: 28px; background: #24140f; color: white;
+      border-radius: 999px; padding: 16px 22px; font-weight: 800; box-shadow: 4px 4px 0 #fff4cc;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div>
+        <div class="sub">концепция 2 · кампус</div>
+        <h1>Планёр!</h1>
+      </div>
+      <div>сегодня горит 1 задача</div>
+    </header>
+    <div class="filters">
+      <span>Все стикеры</span><span>Базы данных</span><span>Высокий</span><span>В работе</span>
+    </div>
+    <div class="board">
+      <article class="tile">
+        <span class="tag">просрочено</span>
+        <h2>Сдать отчёт по сравнению AI-инструментов</h2>
+        <p>Машинное обучение · высокий · вчера</p>
+      </article>
+      <article class="tile white">
+        <span class="tag">лабораторная</span>
+        <h2>Запросы SELECT</h2>
+        <p>Базы данных · через 3 дня</p>
+      </article>
+      <article class="tile mint">
+        <span class="tag">готово</span>
+        <h2>Макет списка</h2>
+        <p>Веб-разработка · сдано</p>
+      </article>
+      <article class="tile white">
+        <p class="big">6</p>
+        <p>задач на доске, 2 уже в работе</p>
+      </article>
+      <article class="tile">
+        <span class="tag">алгоритмы</span>
+        <h2>Разобрать обход графа</h2>
+        <p>завтра · высокий приоритет</p>
+      </article>
+      <article class="tile mint">
+        <span class="tag">сегодня</span>
+        <h2>Рефакторинг контроллера</h2>
+        <p>Веб-разработка · в работе</p>
+      </article>
+    </div>
+  </div>
+  <div class="fab">+ Новая задача</div>
+</body>
+</html>
