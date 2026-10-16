@@ -1,0 +1,19 @@
+databases:
+  - name: planer-db
+    plan: free
+    databaseName: study_planner
+    user: planer
+
+services:
+  - type: web
+    name: planer-api
+    runtime: docker
+    plan: free
+    rootDir: backend/StudyPlanner.Api
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /api/health
+    envVars:
+      - key: ConnectionStrings__DefaultConnection
+        fromDatabase:
+          name: planer-db
+          property: connectionString

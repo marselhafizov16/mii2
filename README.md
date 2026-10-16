@@ -45,6 +45,8 @@ npm run dev
 
 Приложение: http://localhost:5173
 
+Публичный сайт: https://mii2-beta.vercel.app. Он показывает интерфейс. Список задач на этой ссылке заработает после публикации API и базы на Render и указания их адреса в переменной `VITE_API_URL` на Vercel. Файл `render.yaml` описывает API и PostgreSQL для Render.
+
 ## Тесты
 
 ```powershell

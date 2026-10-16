@@ -9,7 +9,11 @@ public static class DbInitializer
 {
     public static async Task InitializeAsync(string connectionString, AppDbContext db)
     {
-        await EnsureDatabaseExistsAsync(connectionString);
+        if (!await CanOpenAsync(connectionString))
+        {
+            await EnsureDatabaseExistsAsync(connectionString);
+        }
+
         await EnsureStudyTasksTableAsync(db);
 
         if (await db.Tasks.AnyAsync())
@@ -19,6 +23,20 @@ public static class DbInitializer
 
         db.Tasks.AddRange(CreateSeed());
         await db.SaveChangesAsync();
+    }
+
+    private static async Task<bool> CanOpenAsync(string connectionString)
+    {
+        try
+        {
+            await using var connection = new NpgsqlConnection(connectionString);
+            await connection.OpenAsync();
+            return true;
+        }
+        catch (PostgresException exception) when (exception.SqlState == "3D000")
+        {
+            return false;
+        }
     }
 
     private static async Task EnsureDatabaseExistsAsync(string connectionString)
